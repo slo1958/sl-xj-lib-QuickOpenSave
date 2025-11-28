@@ -11,7 +11,7 @@ Begin DesktopWindow Window1
    HasMaximizeButton=   True
    HasMinimizeButton=   True
    HasTitleBar     =   True
-   Height          =   400
+   Height          =   504
    ImplicitInstance=   True
    MacProcID       =   0
    MaximumHeight   =   32000
@@ -25,7 +25,7 @@ Begin DesktopWindow Window1
    Type            =   0
    Visible         =   True
    Width           =   600
-   Begin DesktopButton Button1
+   Begin DesktopButton btn_test1
       AllowAutoDeactivate=   True
       Bold            =   False
       Cancel          =   False
@@ -50,11 +50,11 @@ Begin DesktopWindow Window1
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
-      Top             =   28
+      Top             =   58
       Transparent     =   False
       Underline       =   False
       Visible         =   True
-      Width           =   80
+      Width           =   60
    End
    Begin DesktopLabel Label1
       AllowAutoDeactivate=   True
@@ -66,7 +66,7 @@ Begin DesktopWindow Window1
       Height          =   20
       Index           =   -2147483648
       Italic          =   False
-      Left            =   122
+      Left            =   92
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
@@ -82,13 +82,13 @@ Begin DesktopWindow Window1
       TextAlignment   =   0
       TextColor       =   &c000000
       Tooltip         =   ""
-      Top             =   28
+      Top             =   58
       Transparent     =   False
       Underline       =   False
       Visible         =   True
-      Width           =   295
+      Width           =   150
    End
-   Begin DesktopButton Button2
+   Begin DesktopButton btn_test2
       AllowAutoDeactivate=   True
       Bold            =   False
       Cancel          =   False
@@ -113,11 +113,11 @@ Begin DesktopWindow Window1
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
-      Top             =   76
+      Top             =   106
       Transparent     =   False
       Underline       =   False
       Visible         =   True
-      Width           =   80
+      Width           =   60
    End
    Begin DesktopLabel Label2
       AllowAutoDeactivate=   True
@@ -129,7 +129,7 @@ Begin DesktopWindow Window1
       Height          =   20
       Index           =   -2147483648
       Italic          =   False
-      Left            =   122
+      Left            =   92
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
@@ -145,13 +145,13 @@ Begin DesktopWindow Window1
       TextAlignment   =   0
       TextColor       =   &c000000
       Tooltip         =   ""
-      Top             =   76
+      Top             =   106
       Transparent     =   False
       Underline       =   False
       Visible         =   True
-      Width           =   295
+      Width           =   150
    End
-   Begin DesktopButton Button3
+   Begin DesktopButton btn_test3
       AllowAutoDeactivate=   True
       Bold            =   False
       Cancel          =   False
@@ -176,11 +176,11 @@ Begin DesktopWindow Window1
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
-      Top             =   119
+      Top             =   149
       Transparent     =   False
       Underline       =   False
       Visible         =   True
-      Width           =   80
+      Width           =   60
    End
    Begin DesktopLabel Label3
       AllowAutoDeactivate=   True
@@ -192,7 +192,7 @@ Begin DesktopWindow Window1
       Height          =   20
       Index           =   -2147483648
       Italic          =   False
-      Left            =   122
+      Left            =   92
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
@@ -204,19 +204,659 @@ Begin DesktopWindow Window1
       TabIndex        =   5
       TabPanelIndex   =   0
       TabStop         =   True
-      Text            =   "Normal mode with history"
+      Text            =   "Silent test mode"
       TextAlignment   =   0
       TextColor       =   &c000000
       Tooltip         =   ""
-      Top             =   119
+      Top             =   149
       Transparent     =   False
       Underline       =   False
       Visible         =   True
-      Width           =   295
+      Width           =   150
+   End
+   Begin DesktopListBox lb_info
+      AllowAutoDeactivate=   True
+      AllowAutoHideScrollbars=   True
+      AllowExpandableRows=   False
+      AllowFocusRing  =   True
+      AllowResizableColumns=   False
+      AllowRowDragging=   False
+      AllowRowReordering=   False
+      Bold            =   False
+      ColumnCount     =   1
+      ColumnWidths    =   ""
+      DefaultRowHeight=   -1
+      DropIndicatorVisible=   False
+      Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
+      GridLineStyle   =   0
+      HasBorder       =   True
+      HasHeader       =   False
+      HasHorizontalScrollbar=   False
+      HasVerticalScrollbar=   True
+      HeadingIndex    =   -1
+      Height          =   205
+      Index           =   -2147483648
+      InitialValue    =   ""
+      Italic          =   False
+      Left            =   20
+      LockBottom      =   True
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   True
+      LockTop         =   True
+      RequiresSelection=   False
+      RowSelectionType=   0
+      Scope           =   0
+      TabIndex        =   6
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Tooltip         =   ""
+      Top             =   272
+      Transparent     =   False
+      Underline       =   False
+      Visible         =   True
+      Width           =   560
+      _ScrollWidth    =   -1
+   End
+   Begin DesktopButton btn_test4
+      AllowAutoDeactivate=   True
+      Bold            =   False
+      Cancel          =   False
+      Caption         =   "4"
+      Default         =   False
+      Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
+      Height          =   20
+      Index           =   -2147483648
+      Italic          =   False
+      Left            =   20
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      MacButtonStyle  =   0
+      Scope           =   0
+      TabIndex        =   7
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Tooltip         =   ""
+      Top             =   194
+      Transparent     =   False
+      Underline       =   False
+      Visible         =   True
+      Width           =   60
+   End
+   Begin DesktopLabel Label4
+      AllowAutoDeactivate=   True
+      Bold            =   False
+      Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
+      Height          =   20
+      Index           =   -2147483648
+      Italic          =   False
+      Left            =   92
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Multiline       =   False
+      Scope           =   0
+      Selectable      =   False
+      TabIndex        =   8
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Text            =   "Test mode with structured desktop"
+      TextAlignment   =   0
+      TextColor       =   &c000000
+      Tooltip         =   ""
+      Top             =   194
+      Transparent     =   False
+      Underline       =   False
+      Visible         =   True
+      Width           =   220
+   End
+   Begin DesktopButton btn_test5
+      AllowAutoDeactivate=   True
+      Bold            =   False
+      Cancel          =   False
+      Caption         =   "5"
+      Default         =   False
+      Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
+      Height          =   20
+      Index           =   -2147483648
+      Italic          =   False
+      Left            =   20
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      MacButtonStyle  =   0
+      Scope           =   0
+      TabIndex        =   9
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Tooltip         =   ""
+      Top             =   233
+      Transparent     =   False
+      Underline       =   False
+      Visible         =   True
+      Width           =   60
+   End
+   Begin DesktopLabel Label5
+      AllowAutoDeactivate=   True
+      Bold            =   False
+      Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
+      Height          =   20
+      Index           =   -2147483648
+      Italic          =   False
+      Left            =   92
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Multiline       =   False
+      Scope           =   0
+      Selectable      =   False
+      TabIndex        =   10
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Text            =   "Using history"
+      TextAlignment   =   0
+      TextColor       =   &c000000
+      Tooltip         =   ""
+      Top             =   233
+      Transparent     =   False
+      Underline       =   False
+      Visible         =   True
+      Width           =   220
    End
 End
 #tag EndDesktopWindow
 
 #tag WindowCode
+	#tag Method, Flags = &h0
+		Sub HandleFolderFoTest(FolderName as string, FolderPresent as Boolean)
+		  //
+		  // This method used to simulate the presence or absence of folder on desktop
+		  //
+		  var tmpDesktop as FolderItem = SpecialFolder.Desktop
+		  
+		  if tmpDesktop.Child(FolderName).Exists then
+		    if FolderPresent then return
+		    
+		    tmpDesktop.Child(FolderName).Remove
+		    
+		    Return
+		    
+		  else
+		    if FolderPresent then tmpDesktop.Child(FolderName).CreateFolder
+		    Return
+		    
+		  end if
+		  
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Sub RunTest1()
+		  
+		  
+		  var fld as FolderItem
+		  
+		  // 
+		  // Replace this statement:
+		  // fld = FolderItem.ShowOpenFileDialog("")
+		  //
+		  // With this one (nothing changes here):
+		  fld =FldShowOpenFileDialog("", "myinput.txt",nil)
+		  
+		  // What did we get:
+		  showResults(CurrentMethodName, fld)
+		  
+		  return
+		  
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Sub RunTest2()
+		  
+		  
+		  
+		  
+		  var cfg as new clQuickOpenSaveConfig("TEST_QUICK_OPEN_SAVE")
+		  
+		  cfg.TestMode = true
+		  
+		  
+		  var fld as FolderItem
+		  
+		  fld =FldShowOpenFileDialog("", "myinput.txt",cfg)
+		  
+		  // What did we get
+		  showResults(CurrentMethodName, fld)
+		  
+		  return
+		  
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Sub RunTest3()
+		  
+		  
+		  var cfg as new clQuickOpenSaveConfig("TEST_QUICK_OPEN_SAVE")
+		  
+		  cfg.TestMode = true
+		  cfg.InformUser = False // silent mode
+		  
+		  
+		  var fld as FolderItem
+		  
+		  fld =FldShowOpenFileDialog("", "myinput.txt",cfg)
+		  
+		  // What did we get:
+		  showResults(CurrentMethodName, fld)
+		  
+		  return
+		  
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Sub RunTest4()
+		  
+		  const FolderOnDesktop as string = "MyTestFolder"
+		  
+		  var cfg as new clQuickOpenSaveConfig("TEST_QUICK_OPEN_SAVE")
+		  
+		  cfg.TestMode = true
+		  cfg.InformUser = false // Keep quiet
+		  cfg.OrganiseDesktop(FolderOnDesktop,"","")
+		  
+		  
+		  var fld as FolderItem
+		  
+		  
+		  // Behaviour with folder absent: remove test folder if present
+		  HandleFolderFoTest(FolderOnDesktop, false)
+		  
+		  fld =FldShowOpenFileDialog("", "myinput.txt",cfg)
+		  
+		  // What did we get:
+		  showResults(CurrentMethodName + " called with folder absent", fld)
+		  
+		  
+		  // Behaviour with folder present: create test folder
+		  HandleFolderFoTest(FolderOnDesktop, true)
+		  
+		  fld =FldShowOpenFileDialog("", "myinput.txt",cfg)
+		  
+		  // What did we get:
+		  showResults(CurrentMethodName + " called with folder present", fld)
+		  
+		  // Cleanup test folder
+		  HandleFolderFoTest(FolderOnDesktop, false)
+		  
+		  return
+		  
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Sub RunTest5()
+		  //
+		  // Behaviour with history (test mode setting has no impact)
+		  //
+		  // On first call, the user will be asked where the file is located
+		  // On subsequent calls, the path is taken from history
+		  // History is not preserved
+		  //
+		  var cfg as new clQuickOpenSaveConfig("TEST_QUICK_OPEN_SAVE")
+		  
+		  cfg.UseHistory = true
+		  cfg.InformUser = true
+		  
+		  
+		  var fld as FolderItem
+		  
+		  
+		  fld =FldShowOpenFileDialog("", "myinput.txt",cfg)
+		  
+		  // What did we get:
+		  showResults(CurrentMethodName, fld)
+		  
+		  
+		  // Try again
+		  fld =FldShowOpenFileDialog("", "myinput.txt",cfg)
+		  
+		  // What did we get:
+		  showResults(CurrentMethodName, fld)
+		  
+		  
+		  // To save history, call
+		  // cfg.SaveHistory
+		  //
+		  // It is automatically loaded when useHistory is set to true
+		  //
+		  return
+		  
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Sub ShowResults(msg as string, f as FolderItem)
+		  
+		  var txt as string = msg.trim 
+		  txt = txt + " " +  if( f <> nil,  f.NativePath, "nil")
+		  
+		  if f <> nil then txt = txt +" "+ if(f.Exists,"(found)","(not found)")
+		  lb_info.AddRowAt(0, txt)
+		  
+		  return
+		  
+		  
+		End Sub
+	#tag EndMethod
+
+
 #tag EndWindowCode
 
+#tag Events btn_test1
+	#tag Event
+		Sub Pressed()
+		  RunTest1
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events btn_test2
+	#tag Event
+		Sub Pressed()
+		  RunTest2
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events btn_test3
+	#tag Event
+		Sub Pressed()
+		  RunTest3
+		  
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events btn_test4
+	#tag Event
+		Sub Pressed()
+		  RunTest4
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events btn_test5
+	#tag Event
+		Sub Pressed()
+		  RunTest5
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag ViewBehavior
+	#tag ViewProperty
+		Name="Name"
+		Visible=true
+		Group="ID"
+		InitialValue=""
+		Type="String"
+		EditorType=""
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="Interfaces"
+		Visible=true
+		Group="ID"
+		InitialValue=""
+		Type="String"
+		EditorType=""
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="Super"
+		Visible=true
+		Group="ID"
+		InitialValue=""
+		Type="String"
+		EditorType=""
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="Width"
+		Visible=true
+		Group="Size"
+		InitialValue="600"
+		Type="Integer"
+		EditorType=""
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="Height"
+		Visible=true
+		Group="Size"
+		InitialValue="400"
+		Type="Integer"
+		EditorType=""
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="MinimumWidth"
+		Visible=true
+		Group="Size"
+		InitialValue="64"
+		Type="Integer"
+		EditorType=""
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="MinimumHeight"
+		Visible=true
+		Group="Size"
+		InitialValue="64"
+		Type="Integer"
+		EditorType=""
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="MaximumWidth"
+		Visible=true
+		Group="Size"
+		InitialValue="32000"
+		Type="Integer"
+		EditorType=""
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="MaximumHeight"
+		Visible=true
+		Group="Size"
+		InitialValue="32000"
+		Type="Integer"
+		EditorType=""
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="Type"
+		Visible=true
+		Group="Frame"
+		InitialValue="0"
+		Type="Types"
+		EditorType="Enum"
+		#tag EnumValues
+			"0 - Document"
+			"1 - Movable Modal"
+			"2 - Modal Dialog"
+			"3 - Floating Window"
+			"4 - Plain Box"
+			"5 - Shadowed Box"
+			"6 - Rounded Window"
+			"7 - Global Floating Window"
+			"8 - Sheet Window"
+			"9 - Modeless Dialog"
+		#tag EndEnumValues
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="Title"
+		Visible=true
+		Group="Frame"
+		InitialValue="Untitled"
+		Type="String"
+		EditorType=""
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="HasCloseButton"
+		Visible=true
+		Group="Frame"
+		InitialValue="True"
+		Type="Boolean"
+		EditorType=""
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="HasMaximizeButton"
+		Visible=true
+		Group="Frame"
+		InitialValue="True"
+		Type="Boolean"
+		EditorType=""
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="HasMinimizeButton"
+		Visible=true
+		Group="Frame"
+		InitialValue="True"
+		Type="Boolean"
+		EditorType=""
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="HasFullScreenButton"
+		Visible=true
+		Group="Frame"
+		InitialValue="False"
+		Type="Boolean"
+		EditorType=""
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="HasTitleBar"
+		Visible=true
+		Group="Frame"
+		InitialValue="True"
+		Type="Boolean"
+		EditorType=""
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="Resizeable"
+		Visible=true
+		Group="Frame"
+		InitialValue="True"
+		Type="Boolean"
+		EditorType=""
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="Composite"
+		Visible=false
+		Group="OS X (Carbon)"
+		InitialValue="False"
+		Type="Boolean"
+		EditorType=""
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="MacProcID"
+		Visible=false
+		Group="OS X (Carbon)"
+		InitialValue="0"
+		Type="Integer"
+		EditorType=""
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="FullScreen"
+		Visible=true
+		Group="Behavior"
+		InitialValue="False"
+		Type="Boolean"
+		EditorType=""
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="DefaultLocation"
+		Visible=true
+		Group="Behavior"
+		InitialValue="2"
+		Type="Locations"
+		EditorType="Enum"
+		#tag EnumValues
+			"0 - Default"
+			"1 - Parent Window"
+			"2 - Main Screen"
+			"3 - Parent Window Screen"
+			"4 - Stagger"
+		#tag EndEnumValues
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="Visible"
+		Visible=true
+		Group="Behavior"
+		InitialValue="True"
+		Type="Boolean"
+		EditorType=""
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="ImplicitInstance"
+		Visible=true
+		Group="Window Behavior"
+		InitialValue="True"
+		Type="Boolean"
+		EditorType=""
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="HasBackgroundColor"
+		Visible=true
+		Group="Background"
+		InitialValue="False"
+		Type="Boolean"
+		EditorType=""
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="BackgroundColor"
+		Visible=true
+		Group="Background"
+		InitialValue="&cFFFFFF"
+		Type="ColorGroup"
+		EditorType="ColorGroup"
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="Backdrop"
+		Visible=true
+		Group="Background"
+		InitialValue=""
+		Type="Picture"
+		EditorType=""
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="MenuBar"
+		Visible=true
+		Group="Menus"
+		InitialValue=""
+		Type="DesktopMenuBar"
+		EditorType=""
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="MenuBarVisible"
+		Visible=true
+		Group="Deprecated"
+		InitialValue="False"
+		Type="Boolean"
+		EditorType=""
+	#tag EndViewProperty
+#tag EndViewBehavior

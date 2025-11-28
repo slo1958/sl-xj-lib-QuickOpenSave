@@ -3,6 +3,20 @@ Class clQuickOpenSaveConfig
 	#tag Method, Flags = &h0
 		Function CalculateInputPathFromDesktop() As FolderItem
 		  
+		  //
+		  // Returns path from the desktop for input files
+		  //
+		  // Folder valid mean: the name is not an empty string and the folder exists
+		  //
+		  //   !---------------!------------------!-------------------------------------!
+		  //.  ! sourceFolder  ! inputSubFolder   ! Resulting path
+		  //   !---------------!------------------!-------------------------------------!
+		  //   !  not valid         !  not valid              !   Desktop
+		  //   !  not valid         !  valid                     !   Desktop/InputSubFolder
+		  //   !  valid               !  not valid               !   Desktop/SourceFolder
+		  //   !  valid               !  valid                     !   Desktop/SourceFolder/InputSubFolder
+		  //   !---------------!------------------!-------------------------------------!
+		  
 		  return self.CalculatePathFromDesktop(mSourceFolder, mInputSubFolder)
 		  
 		End Function
@@ -11,13 +25,27 @@ Class clQuickOpenSaveConfig
 	#tag Method, Flags = &h0
 		Function CalculateOutputPathFromDesktop() As FolderItem
 		  
+		  //
+		  // Returns path from the desktop for output files
+		  //
+		  // Folder valid mean: the name is not an empty string and the folder exists
+		  //
+		  //   !---------------!------------------!-------------------------------------!
+		  //.  ! sourceFolder  ! outputSubFolder ! Resulting path
+		  //   !---------------!------------------!-------------------------------------!
+		  //   !  not valid         !  not valid              !   Desktop
+		  //   !  not valid         !  valid                     !   Desktop/OutputSubFolder
+		  //   !  valid               !  not valid               !   Desktop/SourceFolder
+		  //   !  valid               !  valid                     !   Desktop/SourceFolder/OutputSubFolder
+		  //   !---------------!------------------!-------------------------------------!
+		  //
 		  return self.CalculatePathFromDesktop(mSourceFolder, mOutputSubFolder)
 		  
 		End Function
 	#tag EndMethod
 
-	#tag Method, Flags = &h0
-		Function CalculatePathFromDesktop(MainFolder as string, SubFolder as string) As FolderItem
+	#tag Method, Flags = &h21
+		Private Function CalculatePathFromDesktop(MainFolder as string, SubFolder as string) As FolderItem
 		  
 		  var tmpFolder as FolderItem = SpecialFolder.Desktop
 		  
@@ -40,7 +68,7 @@ Class clQuickOpenSaveConfig
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
-		Sub Constructor(NameInAppData as string, UseHistory as Boolean)
+		Sub Constructor(NameInAppData as string)
 		  
 		  // 
 		  // Top folder in appdata will be NameInAppData or executable name (without extension) if missing
@@ -66,21 +94,14 @@ Class clQuickOpenSaveConfig
 		    
 		  end if
 		  
-		  
-		  
-		  if UseHistory then
-		    self.History = new Dictionary
-		    LoadHistory
-		    
-		  else
-		    self.History = nil
-		    
-		  end if
+		  self.History = nil
+		  self.UseHistory = false
 		  
 		  self.mSourceFolder = ""
 		  self.mInputSubFolder = ""
 		  self.mOutputSubFolder = ""
 		  
+		  self.mInformUser = True
 		  self.mTestMode = DebugBuild()
 		  
 		  return
@@ -155,8 +176,8 @@ Class clQuickOpenSaveConfig
 		End Function
 	#tag EndMethod
 
-	#tag Method, Flags = &h0
-		Function HistoryFolder(CreateIfMissing as Boolean) As FolderItem
+	#tag Method, Flags = &h21
+		Private Function HistoryFolder(CreateIfMissing as Boolean) As FolderItem
 		  
 		  // 
 		  // Calculate the path to the folder used to persist history
@@ -169,15 +190,11 @@ Class clQuickOpenSaveConfig
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
-		Function HistoryIsActive() As Boolean
-		  
-		End Function
-	#tag EndMethod
-
-	#tag Method, Flags = &h0
 		Sub LoadHistory()
 		  
-		  
+		  //
+		  // This method is called when UseHistory is set to true
+		  //
 		  var fld as FolderItem = self.HistoryFolder(false)
 		  
 		  if fld = nil then return
@@ -297,8 +314,22 @@ Class clQuickOpenSaveConfig
 		Private History As Dictionary
 	#tag EndProperty
 
-	#tag Property, Flags = &h0
-		inputSource As InputSources
+	#tag ComputedProperty, Flags = &h0
+		#tag Getter
+			Get
+			  Return mInformUser
+			End Get
+		#tag EndGetter
+		#tag Setter
+			Set
+			  mInformUser = value
+			End Set
+		#tag EndSetter
+		InformUser As Boolean
+	#tag EndComputedProperty
+
+	#tag Property, Flags = &h21
+		Private mInformUser As Boolean
 	#tag EndProperty
 
 	#tag Property, Flags = &h21
@@ -317,6 +348,10 @@ Class clQuickOpenSaveConfig
 		Private mTestMode As Boolean
 	#tag EndProperty
 
+	#tag Property, Flags = &h21
+		Private mUseHistory As Boolean
+	#tag EndProperty
+
 	#tag ComputedProperty, Flags = &h0
 		#tag Getter
 			Get
@@ -325,10 +360,34 @@ Class clQuickOpenSaveConfig
 		#tag EndGetter
 		#tag Setter
 			Set
+			  
 			  mTestMode = value
 			End Set
 		#tag EndSetter
 		TestMode As Boolean
+	#tag EndComputedProperty
+
+	#tag ComputedProperty, Flags = &h0
+		#tag Getter
+			Get
+			  Return mUseHistory
+			End Get
+		#tag EndGetter
+		#tag Setter
+			Set
+			   
+			  if mUseHistory = value then Return
+			  
+			  if value  and self.History=nil then
+			    self.History = new Dictionary
+			    LoadHistory
+			    
+			  end if
+			  
+			  mUseHistory = value
+			End Set
+		#tag EndSetter
+		UseHistory As Boolean
 	#tag EndComputedProperty
 
 
@@ -387,22 +446,23 @@ Class clQuickOpenSaveConfig
 			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
-			Name="inputSource"
+			Name="TestMode"
 			Visible=false
 			Group="Behavior"
 			InitialValue=""
-			Type="InputSources"
-			EditorType="Enum"
-			#tag EnumValues
-				"0 - Desktop"
-				"1 - DesktopFolder"
-				"2 - DesktopInputFolder"
-				"3 - History"
-				"4 - UserSelected"
-			#tag EndEnumValues
+			Type="Boolean"
+			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
-			Name="TestMode"
+			Name="InformUser"
+			Visible=false
+			Group="Behavior"
+			InitialValue=""
+			Type="Boolean"
+			EditorType=""
+		#tag EndViewProperty
+		#tag ViewProperty
+			Name="UseHistory"
 			Visible=false
 			Group="Behavior"
 			InitialValue=""
