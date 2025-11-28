@@ -52,6 +52,14 @@ Protected Module mdQuickOpenSave
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
+		Function FldShowSaveFileDialog(filter as string, defaultFilename as string) As FolderItem
+		  
+		  return FolderItem.ShowSaveFIleDialog(filter, defaultFilename)
+		  
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
 		Function FldShowSaveFileDialog(filter as string, filename as string, config as clQuickOpenSaveConfig) As FolderItem
 		  //
 		  //  Replacement for ShowSaveFIleDialog() from library
