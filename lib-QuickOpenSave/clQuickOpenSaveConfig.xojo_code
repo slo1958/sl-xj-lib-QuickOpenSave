@@ -107,7 +107,7 @@ Class clQuickOpenSaveConfig
 		  return
 		  
 		  
-		   
+		  
 		End Sub
 	#tag EndMethod
 
@@ -375,7 +375,7 @@ Class clQuickOpenSaveConfig
 		#tag EndGetter
 		#tag Setter
 			Set
-			   
+			  
 			  if mUseHistory = value then Return
 			  
 			  if value  and self.History=nil then
